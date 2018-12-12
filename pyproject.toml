@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Uow Sols Scraper"
-ersion = "0.0.1"
+version = "0.0.1"
 description = "An exam notifier for Exam results. Because it's too hard to send an email when grades are updated."
 
 license = "MIT"
