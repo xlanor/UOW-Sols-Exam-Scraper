@@ -6,11 +6,11 @@ from Controllers.html_checker import HtmlChecker
 EXISTS_HTML = ""
 NOT_EXISTS_HTML = ""
 
-with open('./Tests/Sources/exist.html') as ex:
+with open('src/Tests/Sources/exist.html') as ex:
     exString = ex.read()
     EXISTS_HTML += exString
 
-with open('./Tests/Sources/not_exist.html') as nex:
+with open('src/Tests/Sources/not_exist.html') as nex:
     nexString = nex.read()
     NOT_EXISTS_HTML += nexString
 
