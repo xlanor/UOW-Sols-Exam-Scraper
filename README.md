@@ -58,4 +58,8 @@ After setting up the venv, you can then run
 >	  poetry install
 
 
+I ran this headlessly using pm2, with the following in the src/ folder
+> pm2 start ./main.py --interpreter path-to-venv-bin-python
+
+
 I dont actually know if this really works yet, I guess we'll find out.
