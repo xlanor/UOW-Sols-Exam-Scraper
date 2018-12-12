@@ -18,7 +18,9 @@ It will first scrape the relevant information from SOLS using headless chrome, a
 
 **NOT SUPPORTED FOR WINDOWS**
 
-The following file config.json **MUST** be placed in the src file.
+The following file **MUST** be placed in src/.
+
+The file name **MUST** be called **config.json**
 
 Fill in the relevant details accordingly. If you need help with using telegram bots, google it.
 
@@ -31,9 +33,29 @@ Fill in the relevant details accordingly. If you need help with using telegram b
 
 Google Chrome is used as the preferred browser for selenium. Install using apt-get/ .exe/.msi/.app file directly, whatever.
 
+*For ubuntu*
+
+>	  sudo apt-get update
+>	  sudo apt-get install -y libappindicator1 fonts-liberation
+>	  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+>	  sudo dpkg -i google-chrome*.deb
+
+If you run into dependecy issues when installing, use
+>	  sudo apt fix-broken install
+
+It is highly recomended to set up a virtual environment.
+
+[Documentation](https://docs.python.org/3/library/venv.html) on using venvs is linked here.
+
+
 [ChromeDriver](https://chromedriver.storage.googleapis.com/index.html?path=2.45/) must be placed in src/
 
 
 Dependecies are managed with [Poetry](https://github.com/sdispater/poetry).
+
+
+After setting up the venv, you can then run 
+>	  poetry install
+
 
 I dont actually know if this really works yet, I guess we'll find out.
