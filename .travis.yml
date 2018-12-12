@@ -1,0 +1,14 @@
+dist: trusty
+addons:
+    chrome: stable
+
+language: python
+
+python:
+    - 3.6
+before_install:
+    - curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+    - source $HOME/.poetry/env
+script:
+    - poetry install
+    - pytest -v

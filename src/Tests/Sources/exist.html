@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" http-equiv="PRAGMA" content="NO-CACHE">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="robots" content="none">
+      <link rel="icon" href="/images/favicon.ico">
+      <title>My SOLS - Enrolment Record</title>
+      <link href="/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/css/font-awesome.min.css" rel="stylesheet">
+      <link href="/css/jquery-ui.css" rel="stylesheet">
+      <link href="/css/menu.css" rel="stylesheet">
+      <link href="/css/print.css" rel="stylesheet"  media="print" >
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --><script src="/js/jquery.min.js"></script><script src="/js/jquery-ui.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery.cookie.js"></script><!-- IE10 viewport hack for Surface/desktop Windows 8 bugs  --><script src="/js/ie10-viewport-bug-workaround.js"></script><!--[if lt IE 9]><script src="/js/html5shiv.min.js"></script><script src="/js/respond.min.js"></script><![endif]-->
+      <style id="antiClickjack">body{display:none !important;}</style>
+      <script>
+         if(self === top){
+              $("#antiClickjack").remove();
+         }else{
+              top.location = self.location;
+         }
+      </script><script>
+         var my_menu_item = null;
+         var nav = null;
+      </script>
+   </head>
+   <body >
+      <div id="body">
+         <!-- Static navbar -->
+         <nav class="navbar navbar-inverse navbar-static-top" id="navigation-bar" role="navigation">
+            <div class="container-fluid">
+               <div class="navbar-header"><button type="button" id="mobile-menu-button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="fa fa-bars"></span><span class="fa fa-close" style="display:none;"></span></button><a class="navbar-brand" id="uow-logo" href="sols_app_entry.initial_display?p_session_id=&p_student_number=5919198&p_cs=24028587971793510285" ><img src="/images/logo_uow.png" height="45px" alt="SOLS Home"></a></div>
+               <div id="navbar">
+                  <div class="hidden-xs hidden-sm">
+                     <span class="navbar-title" id="navbar-title">Student Online Services</span>
+                     <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="fa fa-fw fa-user" aria-hidden="true"></span> Mr Jing Kai  Tan <strong>(5919198)</strong> <span class="caret"></span></a>
+                           <ul class="dropdown-menu" role="menu">
+                              <li><a href="sols_app_entry.initial_display?p_session_id=&p_student_number=5919198&p_cs=24028587971793510285"><span class="fa fa-fw fa-home"></span> SOLS Home</a></li>
+                              <li><a href="http://www.uow.edu.au/student/sols-help/index.html" target="_blank"><span class="fa fa-fw fa-question"></span> SOLS Help</a></li>
+                              <li><a href="sols_other_info.call_main?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285" target="_blank"><span class="fa fa-fw fa-archive"></span> View IT Policies</a></li>
+                              <li><a href="http://www.uow.edu.au/student/enquiries/index.html" target="_blank"><span class="fa fa-fw fa-comments-o"></span> Contact Student Central</a></li>
+                              <li class="divider"></li>
+                              <li><a href="sols_login_auth.do_logout?p_session_id="><span class="fa fa-fw fa-sign-out"></span> Logout</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </nav>
+         <div id="mobile-menu">
+            <div id="mobile-user">
+               <div id="mobile-user-details"><span class="fa fa-fw fa-user"></span> Mr Jing Kai Tan <strong>(5919198)</strong></div>
+               <a href="sols_login_auth.do_logout?p_session_id=" class="btn btn-block btn-danger">Logout <span class="fa fa-fw fa-sign-out"></span></a>
+            </div>
+            <ul>
+               <li class="mobile"><a href="sols_app_entry.initial_display?p_session_id=&p_student_number=5919198&p_cs=24028587971793510285">SOLS Home <span class="fa fa-fw fa-home"></span></a></li>
+               <li class="mobile">
+                  <a class="m-arrow" href="javascript:void(0)">Current Session</a>
+                  <div>
+                     <ul>
+                        <li><a href="javascript:void(0)" class="back">&lt; Back</a></li>
+                        <li><a href="sols_lms.do_lms_SSO?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&p_origin=2" target="_blank" title="Access your online subjects in the eLearning space">eLearning</a></li>
+                        <li><a href="sols_lms.call_main?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Shows the availability for current subjects in which you have enrolled">eLearning Details</a></li>
+                        <li><a href="sols_assignment_result.call_main?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="View your assignment results (Note: Not all lecturers post results here)">Assignment Results</a></li>
+                        <li><a href="SOLS_STUDENT_HISTORY.CALL_MAIN_STUDENT?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Re-read your SOLSMail messages">SOLSMail History</a></li>
+                        <li><a href="sols_ac_student.call_main?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Apply for Academic Consideration">Academic Consideration</a></li>
+                        <li><a href="SOLS_TEXTBOOK.call_main?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Shows textbooks for current subjects in which you have enrolled">Textbook Information</a></li>
+                        <li><a href="sols_sf_student_view.student_forms?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Access and submit online some of the most frequently used forms">Student Forms</a></li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="mobile">
+                  <a class="m-arrow" href="javascript:void(0)">Enrolment</a>
+                  <div>
+                     <ul>
+                        <li><a href="javascript:void(0)" class="back">&lt; Back</a></li>
+                        <li><a href="sols_tutorial_enrolment.call_main_student?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Enrol in Tutorials for Subjects that use the SMP system">Tutorial Enrolment</a></li>
+                        <li><a href="sols_enrolment_record_student.CALL_MAIN?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="View subject code, subject status and marks/grades for completed subjects">Enrolment Record</a></li>
+                        <li><a href="MCP.MCP_ON_CHOOSE1?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&P_PROCESS=SOLSVARIATION&P_STEP=1&P_USR_CHOICE=Continue"  title="Enrol in or Withdraw from subjects">Enrolment and Variations</a></li>
+                        <li><a href="sols_print_enrolment_record.main?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Set up and print your enrolment record, it includes 3rd party verification">Print Enrolment Record</a></li>
+                        <li><a href="sols_major_maint_student.call_main_sols?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Declare/change your major when Faculty approval is NOT required">Major Maintenance</a></li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="mobile">
+                  <a class="m-arrow" href="javascript:void(0)">Timetable</a>
+                  <div>
+                     <ul>
+                        <li><a href="javascript:void(0)" class="back">&lt; Back</a></li>
+                        <li><a href="sols_timetable_student.CALL_MAIN?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Once you have enrolled, this link shows your own personal subject timetable">Subject Timetable</a></li>
+                        <li><a href="sols_er_exam_timetable.call_main?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Check your exam timetable here when it is released">Exam Timetable</a></li>
+                        <li><a href="sols_tutorial_enrolment.my_timetable?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Lecture and current commitment tutorial timetable">My Timetable</a></li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="mobile">
+                  <a class="m-arrow" href="javascript:void(0)">Fees</a>
+                  <div>
+                     <ul>
+                        <li><a href="javascript:void(0)" class="back">&lt; Back</a></li>
+                        <li><a href="sols_fee.call_main?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&p_fee_type=fee"  title="Access a summary of outstanding balances and UOW Fee Statement">Fee Statement</a></li>
+                        <li><a href="sols_billing_maintenance_std.getstudentdetails?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Eligible domestic students use this option to maintain their billing type">HELP Loan Option</a></li>
+                        <li><a href="sols_fee.call_main?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&p_fee_type=can"  title="Statement of liablity for Commonwealth supported students and FEE-HELP students">Commonwealth Assistance Notice</a></li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="mobile">
+                  <a class="m-arrow" href="javascript:void(0)">Personal Details and Consent</a>
+                  <div>
+                     <ul>
+                        <li><a href="javascript:void(0)" class="back">&lt; Back</a></li>
+                        <li><a href="sols_personal_details_student.call_main1_sols?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="View and Maintance Personal Details">Personal Details</a></li>
+                        <li><a href="sols_personal_details_student.call_main2_sols?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="View and Maintance Address and Contact Details">Address and Contact Details</a></li>
+                        <li><a href="MCP.MCP_ON_CHOOSE1?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&P_PROCESS=SOLSDETYA&P_STEP=1&P_USR_CHOICE=HOME"  title="Fill in a survey to provide UOW with info about our students">Student Statistical Information</a></li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="mobile">
+                  <a class="m-arrow" href="javascript:void(0)">Graduation</a>
+                  <div>
+                     <ul>
+                        <li><a href="javascript:void(0)" class="back">&lt; Back</a></li>
+                        <li><a href="sols_grad_app.accept_screen?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Apply to Graduate in your Final Session">Graduation Application</a></li>
+                        <li><a href="sols_grad_confirm_eligibility.call_main_sols?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Check your graduation details and return to check your eligibility to graduate from the date specified.">Graduation Confirmation & Eligibility</a></li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="mobile">
+                  <a class="m-arrow" href="javascript:void(0)">SOLS Vote and Comments</a>
+                  <div>
+                     <ul>
+                        <li><a href="javascript:void(0)" class="back">&lt; Back</a></li>
+                        <li><a href="sols_feedback_new.information_page?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Provide feedback on the functionality and performance of SOLS">SOLS Comments</a></li>
+                        <li><a href="sols_evote_pkg.print_introduction?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285&"  title="Voting for student elections">SOLS Vote</a></li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="mobile"><a href="http://www.uow.edu.au/student/enquiries/index.html" target="_blank">Contact Student Central</a><br></li>
+               <li class="mobile"><a href="http://www.uow.edu.au/student/sols-help/index.html" target="_blank">SOLS Help</a></li>
+               <li class="mobile"><a href="sols_other_info.call_main?p_student_number=5919198&p_session_id=&p_cs=24028587971793510285" target="_blank">View IT Policies</a></li>
+            </ul>
+         </div>
+         <div class="container-fluid" id="nav-body">
+            <div class="row">
+               <div class="page-header col-md-12">
+                  <div class="col-md-8">
+                     <h1>Enrolment Record</h1>
+                     <div id="printSection" class="print-student-info">Mr Jing Kai  Tan <strong>(5919198)</strong></div>
+                  </div>
+                  <div class="col-md-4 print-student-info"></div>
+               </div>
+            </div>
+            <div class="row">
+               <div id="sidebar-left" class="col-xs-2 col-sm-2 hidden-sm hidden-xs">
+                  <div class="nav-menu">
+                     <div class="category" id="expand-all"><a href="javascript:void(0);">Expand All <span class="fa fa-fw fa-plus-square-o after"></span></a></div>
+                     <div class="category" id="collapse-all" style="display:none;"><a href="javascript:void(0);">Collapse All <span class="fa fa-fw fa-minus-square-o after"></span></a></div>
+                     <div class="category"><a href="sols_app_entry.initial_display?p_session_id=&p_student_number=5919198&p_cs=24028587971793510285">SOLS Home <span class="fa fa-fw fa-home after"></span></a></div>
+                  </div>
+                  <div class="nav-menu">
+                     <div class="category">Current Session<span class="fa fa-fw fa-angle-right after"></span></div>
+                     <ul>
+                        <li class="menu-item menu-popup" data-id="26"><a href="sols_lms.do_lms_SSO?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&p_origin=2" title="Access your online subjects in the eLearning space" onclick="return false;">eLearning</a></li>
+                        <li class="menu-item" data-id="64"><a href="sols_lms.call_main?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Shows the availability for current subjects in which you have enrolled" >eLearning Details</a></li>
+                        <li class="menu-item" data-id="32"><a href="sols_assignment_result.call_main?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="View your assignment results (Note: Not all lecturers post results here)" >Assignment Results</a></li>
+                        <li class="menu-item" data-id="17"><a href="SOLS_STUDENT_HISTORY.CALL_MAIN_STUDENT?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Re-read your SOLSMail messages" >SOLSMail History</a></li>
+                        <li class="menu-item" data-id="30"><a href="sols_ac_student.call_main?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Apply for Academic Consideration" >Academic Consideration</a></li>
+                        <li class="menu-item" data-id="20"><a href="SOLS_TEXTBOOK.call_main?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Shows textbooks for current subjects in which you have enrolled" >Textbook Information</a></li>
+                        <li class="menu-item" data-id="25"><a href="sols_sf_student_view.student_forms?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Access and submit online some of the most frequently used forms" >Student Forms</a></li>
+                     </ul>
+                  </div>
+                  <div class="nav-menu">
+                     <div class="category">Enrolment<span class="fa fa-fw fa-angle-right after"></span></div>
+                     <ul>
+                        <li class="menu-item" data-id="18"><a href="sols_tutorial_enrolment.call_main_student?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Enrol in Tutorials for Subjects that use the SMP system" >Tutorial Enrolment</a></li>
+                        <li class="menu-item" data-id="21"><a href="sols_enrolment_record_student.CALL_MAIN?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="View subject code, subject status and marks/grades for completed subjects" >Enrolment Record</a></li>
+                        <li class="menu-item" data-id="22"><a href="MCP.MCP_ON_CHOOSE1?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&P_PROCESS=SOLSVARIATION&P_STEP=1&P_USR_CHOICE=Continue" title="Enrol in or Withdraw from subjects" >Enrolment and Variations</a></li>
+                        <li class="menu-item" data-id="3"><a href="sols_print_enrolment_record.main?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Set up and print your enrolment record, it includes 3rd party verification" >Print Enrolment Record</a></li>
+                        <li class="menu-item" data-id="28"><a href="sols_major_maint_student.call_main_sols?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Declare/change your major when Faculty approval is NOT required" >Major Maintenance</a></li>
+                     </ul>
+                  </div>
+                  <div class="nav-menu">
+                     <div class="category">Timetable<span class="fa fa-fw fa-angle-right after"></span></div>
+                     <ul>
+                        <li class="menu-item" data-id="15"><a href="sols_timetable_student.CALL_MAIN?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Once you have enrolled, this link shows your own personal subject timetable" >Subject Timetable</a></li>
+                        <li class="menu-item" data-id="44"><a href="sols_er_exam_timetable.call_main?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Check your exam timetable here when it is released" >Exam Timetable</a></li>
+                        <li class="menu-item" data-id="11"><a href="sols_tutorial_enrolment.my_timetable?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Lecture and current commitment tutorial timetable" >My Timetable</a></li>
+                     </ul>
+                  </div>
+                  <div class="nav-menu">
+                     <div class="category">Fees<span class="fa fa-fw fa-angle-right after"></span></div>
+                     <ul>
+                        <li class="menu-item" data-id="47"><a href="sols_fee.call_main?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&p_fee_type=fee" title="Access a summary of outstanding balances and UOW Fee Statement" >Fee Statement</a></li>
+                        <li class="menu-item" data-id="5"><a href="sols_billing_maintenance_std.getstudentdetails?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Eligible domestic students use this option to maintain their billing type" >HELP Loan Option</a></li>
+                        <li class="menu-item" data-id="51"><a href="sols_fee.call_main?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&p_fee_type=can" title="Statement of liablity for Commonwealth supported students and FEE-HELP students" >Commonwealth Assistance Notice</a></li>
+                     </ul>
+                  </div>
+                  <div class="nav-menu">
+                     <div class="category">Personal Details and Consent<span class="fa fa-fw fa-angle-right after"></span></div>
+                     <ul>
+                        <li class="menu-item" data-id="6"><a href="sols_personal_details_student.call_main1_sols?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="View and Maintance Personal Details" >Personal Details</a></li>
+                        <li class="menu-item" data-id="29"><a href="sols_personal_details_student.call_main2_sols?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="View and Maintance Address and Contact Details" >Address and Contact Details</a></li>
+                        <li class="menu-item" data-id="23"><a href="MCP.MCP_ON_CHOOSE1?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&P_PROCESS=SOLSDETYA&P_STEP=1&P_USR_CHOICE=HOME" title="Fill in a survey to provide UOW with info about our students" >Student Statistical Information</a></li>
+                     </ul>
+                  </div>
+                  <div class="nav-menu">
+                     <div class="category">Graduation<span class="fa fa-fw fa-angle-right after"></span></div>
+                     <ul>
+                        <li class="menu-item" data-id="58"><a href="sols_grad_app.accept_screen?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Apply to Graduate in your Final Session" >Graduation Application</a></li>
+                        <li class="menu-item" data-id="59"><a href="sols_grad_confirm_eligibility.call_main_sols?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Check your graduation details and return to check your eligibility to graduate from the date specified." >Graduation Confirmation & Eligibility</a></li>
+                     </ul>
+                  </div>
+                  <div class="nav-menu">
+                     <div class="category">SOLS Vote and Comments<span class="fa fa-fw fa-angle-right after"></span></div>
+                     <ul>
+                        <li class="menu-item" data-id="27"><a href="sols_feedback_new.information_page?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Provide feedback on the functionality and performance of SOLS" >SOLS Comments</a></li>
+                        <li class="menu-item" data-id="24"><a href="sols_evote_pkg.print_introduction?P_STUDENT_NUMBER=5919198&P_SESSION_ID=&p_cs=24028587971793510285&" title="Voting for student elections" >SOLS Vote</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="container-fluid">
+                  <div class="row">
+                     <div id="content" class="col-xs-12 col-sm-12 col-md-10 border-left">
+                        <strong>Effective Date:&nbsp;&nbsp;&nbsp;11 December  2018</strong>
+                        <hr class="divider">
+                        <div id="course_details360230">
+                           <div class="row">
+                              <div class="col-xs-3 col-md-1"><strong>Course: </strong></div>
+                              <div class="col-xs-2 col-md-1"><strong>766</strong></div>
+                              <div class="col-xs-7 col-md-10"><strong>Bachelor of Computer Science</strong></div>
+                           </div>
+                           <div class="row visible-md visible-lg">
+                              <div class="col-xs-3 col-md-1"><strong>Instance: </strong></div>
+                              <div class="col-xs-2 col-md-1"><strong>SG766</strong></div>
+                              <div class="col-xs-7 col-md-10"><strong>Campus: Singapore Institute of Management&nbsp&nbsp&nbsp&nbsp Delivery: On Campus&nbsp&nbsp&nbsp&nbsp Status: Active</strong></div>
+                           </div>
+                           <div class="row">
+                              <div class="col-xs-3 col-md-1"><strong>Major: </strong></div>
+                              <div class="col-xs-2 col-md-1"><strong>CS42</strong></div>
+                              <div class="col-xs-7 col-md-10"><strong>Digital Systems Security</strong></div>
+                           </div>
+                        </div>
+                        <br>
+                        <TABLE   class=" table table-striped table-bordered ">
+                           <CAPTION><input type="button" class="table-show hidden-md hidden-lg btn btn-default btn-sm pull-left" value="Expand to full view"><input type="button" class="table-hide hidden-sm hidden-xs hidden-md hidden-lg btn btn-default btn-sm pull-left" value="Collapse to compact view"></CAPTION>
+                           <thead class="cf">
+                              <TR ALIGN="center"  class=" ">
+                                 <TH ALIGN="center" class="col-md-1 ">Year</TH>
+                                 <TH ALIGN="center" class="col-md-2 hidden-sm hidden-xs hide-cell">Session</TH>
+                                 <TH ALIGN="center" class="col-md-2 hidden-sm hidden-xs hide-cell">Campus/ Delivery</TH>
+                                 <TH ALIGN="center" class="col-md-1 ">Subject Code</TH>
+                                 <TH ALIGN="center" class="col-md-1 hidden-sm hidden-xs hide-cell">NomCP</TH>
+                                 <TH ALIGN="center" class="col-md-1 col-sm-1 hidden-sm hidden-xs hide-cell">Mark</TH>
+                                 <TH ALIGN="center" class="col-md-1 col-sm-1 hidden-sm hidden-xs hide-cell">Grade</TH>
+                                 <TH ALIGN="center" class="col-md-1 col-sm-2 hidden-md hidden-lg hide-cell">Mark/ Grade</TH>
+                                 <TH ALIGN="center" class="col-md-1 ">Status</TH>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <TR ALIGN="CENTER"  class=" ">
+                                 <TD  class=" " data-title="">2018</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" hidden-sm hidden-xs hide-cell" data-title=""><span data-toggle="tooltip" data-placement="top" title="02-JAN-18 ~ 09-MAR-18">SIM Session 1&nbsp;<span class="fa fa-info-circle"></span></span></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">Singapore Institute of Management/ On Campus</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" " data-title=""><a href="https://solss.uow.edu.au/apir/public_subjectview.subject_info_view?p_subject_id=171634" target="_blank">CSCI124</a></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">6</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">94</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">HD</TD>
+                                 <TD  class=" hidden-md hidden-lg hide-cell" data-title="">94/HD</TD>
+                                 <TD  class=" " data-title="">Complete</TD>
+                              </tr>
+                              <TR ALIGN="CENTER"  class=" ">
+                                 <TD  class=" " data-title="">2018</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" hidden-sm hidden-xs hide-cell" data-title=""><span data-toggle="tooltip" data-placement="top" title="02-JAN-18 ~ 09-MAR-18">SIM Session 1&nbsp;<span class="fa fa-info-circle"></span></span></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">Singapore Institute of Management/ On Campus</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" " data-title=""><a href="https://solss.uow.edu.au/apir/public_subjectview.subject_info_view?p_subject_id=173470" target="_blank">MATH121</a></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">6</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">77</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">D</TD>
+                                 <TD  class=" hidden-md hidden-lg hide-cell" data-title="">77/D</TD>
+                                 <TD  class=" " data-title="">Complete</TD>
+                              </tr>
+                              <TR ALIGN="CENTER"  class=" ">
+                                 <TD  class=" " data-title="">2018</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" hidden-sm hidden-xs hide-cell" data-title=""><span data-toggle="tooltip" data-placement="top" title="31-MAR-18 ~ 08-JUN-18">SIM Session 2&nbsp;<span class="fa fa-info-circle"></span></span></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">Singapore Institute of Management/ On Campus</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" " data-title=""><a href="https://solss.uow.edu.au/apir/public_subjectview.subject_info_view?p_subject_id=171640" target="_blank">CSCI213</a></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">6</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">99</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">HD</TD>
+                                 <TD  class=" hidden-md hidden-lg hide-cell" data-title="">99/HD</TD>
+                                 <TD  class=" " data-title="">Complete</TD>
+                              </tr>
+                              <TR ALIGN="CENTER"  class=" ">
+                                 <TD  class=" " data-title="">2018</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" hidden-sm hidden-xs hide-cell" data-title=""><span data-toggle="tooltip" data-placement="top" title="31-MAR-18 ~ 08-JUN-18">SIM Session 2&nbsp;<span class="fa fa-info-circle"></span></span></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">Singapore Institute of Management/ On Campus</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" " data-title=""><a href="https://solss.uow.edu.au/apir/public_subjectview.subject_info_view?p_subject_id=171661" target="_blank">IACT201</a></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">6</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">85</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">HD</TD>
+                                 <TD  class=" hidden-md hidden-lg hide-cell" data-title="">85/HD</TD>
+                                 <TD  class=" " data-title="">Complete</TD>
+                              </tr>
+                              <TR ALIGN="CENTER"  class=" ">
+                                 <TD  class=" " data-title="">2018</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" hidden-sm hidden-xs hide-cell" data-title=""><span data-toggle="tooltip" data-placement="top" title="30-JUN-18 ~ 07-SEP-18">SIM Session 3&nbsp;<span class="fa fa-info-circle"></span></span></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">Singapore Institute of Management/ On Campus</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" " data-title=""><a href="https://solss.uow.edu.au/apir/public_subjectview.subject_info_view?p_subject_id=170070" target="_blank">CSCI203</a></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">6</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">93</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">HD</TD>
+                                 <TD  class=" hidden-md hidden-lg hide-cell" data-title="">93/HD</TD>
+                                 <TD  class=" " data-title="">Complete</TD>
+                              </tr>
+                              <TR ALIGN="CENTER"  class=" ">
+                                 <TD  class=" " data-title="">2018</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" hidden-sm hidden-xs hide-cell" data-title=""><span data-toggle="tooltip" data-placement="top" title="30-JUN-18 ~ 07-SEP-18">SIM Session 3&nbsp;<span class="fa fa-info-circle"></span></span></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">Singapore Institute of Management/ On Campus</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" " data-title=""><a href="https://solss.uow.edu.au/apir/public_subjectview.subject_info_view?p_subject_id=171638" target="_blank">CSCI205</a></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">6</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">82</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">D</TD>
+                                 <TD  class=" hidden-md hidden-lg hide-cell" data-title="">82/D</TD>
+                                 <TD  class=" " data-title="">Complete</TD>
+                              </tr>
+                              <TR ALIGN="CENTER"  class=" ">
+                                 <TD  class=" " data-title="">2018</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" hidden-sm hidden-xs hide-cell" data-title=""><span data-toggle="tooltip" data-placement="top" title="29-SEP-18 ~ 07-DEC-18">SIM Session 4&nbsp;<span class="fa fa-info-circle"></span></span></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">Singapore Institute of Management/ On Campus</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" " data-title=""><a href="https://solss.uow.edu.au/apir/public_subjectview.subject_info_view?p_subject_id=171637" target="_blank">CSCI204</a></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">6</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">82</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">D</TD>
+                                 <TD  class=" hidden-md hidden-lg hide-cell" data-title="">82/D</TD>
+                                 <TD  class=" " data-title="">Enrolled</TD>
+                              </tr>
+                              <TR ALIGN="CENTER"  class=" ">
+                                 <TD  class=" " data-title="">2018</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" hidden-sm hidden-xs hide-cell" data-title=""><span data-toggle="tooltip" data-placement="top" title="29-SEP-18 ~ 07-DEC-18">SIM Session 4&nbsp;<span class="fa fa-info-circle"></span></span></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">Singapore Institute of Management/ On Campus</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" " data-title=""><a href="https://solss.uow.edu.au/apir/public_subjectview.subject_info_view?p_subject_id=170071" target="_blank">CSCI235</a></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">6</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">82</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">D</TD>
+                                 <TD  class=" hidden-md hidden-lg hide-cell" data-title="">82/D</TD>
+                                 <TD  class=" " data-title="">Enrolled</TD>
+                              </tr>
+                              <TR ALIGN="CENTER"  class=" ">
+                                 <TD  class=" " data-title="">2017</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" hidden-sm hidden-xs hide-cell" data-title=""><span data-toggle="tooltip" data-placement="top" title="02-OCT-17 ~ 30-NOV-17">SIM Session 4&nbsp;<span class="fa fa-info-circle"></span></span></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">Singapore Institute of Management/ On Campus</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" " data-title=""><a href="https://solss.uow.edu.au/apir/public_subjectview.subject_info_view?p_subject_id=162211" target="_blank">CSCI103</a></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">6</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">87</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">HD</TD>
+                                 <TD  class=" hidden-md hidden-lg hide-cell" data-title="">87/HD</TD>
+                                 <TD  class=" " data-title="">Complete</TD>
+                              </tr>
+                              <TR ALIGN="CENTER"  class=" ">
+                                 <TD  class=" " data-title="">2017</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" hidden-sm hidden-xs hide-cell" data-title=""><span data-toggle="tooltip" data-placement="top" title="02-OCT-17 ~ 30-NOV-17">SIM Session 4&nbsp;<span class="fa fa-info-circle"></span></span></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">Singapore Institute of Management/ On Campus</TD>
+                                 <td align="CENTER" dp=""  rowspan="" colspan=""  class=" " data-title=""><a href="https://solss.uow.edu.au/apir/public_subjectview.subject_info_view?p_subject_id=162213" target="_blank">CSCI114</a></td>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">6</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">97</TD>
+                                 <TD  class=" hidden-sm hidden-xs hide-cell" data-title="">HD</TD>
+                                 <TD  class=" hidden-md hidden-lg hide-cell" data-title="">97/HD</TD>
+                                 <TD  class=" " data-title="">Complete</TD>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <div class="row">
+                           <div class="col-lg-2 col-lg-offset-5 col-sm-4 col-sm-offset-4 col-xs-12">
+                              <FORM ACTION="sols_enrolment_record_student.display_records_extra_info" METHOD="POST"  role="form"  class="form-horizontal "><INPUT TYPE="hidden" NAME="p_student_number" VALUE="5919198"><INPUT TYPE="hidden" NAME="p_session_id" VALUE=""><INPUT TYPE="hidden" NAME="p_person_id" VALUE="946753"><INPUT TYPE="hidden" NAME="p_cs" VALUE="22274508732158444015"><INPUT TYPE="submit" VALUE="Further Details"  onClick="$(this).val('In Progress...'); this.form.submit();$(this).attr('disabled', true);return false;" class=" btn btn-primary btn-block disabled_on_click"></form>
+                           </div>
+                        </div>
+                        <script>$(function() {
+                           $('[data-toggle="tooltip"]').tooltip();
+                           })
+                        </script>
+                        <p>
+                        <p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <span class="col-md-offset-6 col-md-6 col-xs-12 text-right h6 hide-print">Last successful login: 11-12-2018 18:31:28<br><a href="sols_user_login_history.call_main?p_student_number=5919198" onclick="window.open(this.href, '_blank', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=600, height=600'); return false;" >Recent Login History</a><br><br><br></span>
+         </div>
+      </div>
+      <div class="footer" id="footerwrap">
+         <a href="#" class="back-to-top hide-print">Back to Top</a>
+         <div class="container">
+            <ul>
+               <li><a href="sols_app_entry.initial_display?p_session_id=&p_student_number=5919198&p_cs=24028587971793510285" >SOLS Home</a></li>
+               <li><a href="http://www.uow.edu.au/student/sols-help/index.html" target="_blank">SOLS Help</a></li>
+               <li>Comments and questions should be directed to <a href="http://www.uow.edu.au/student/enquiries/index.html" target="_blank">Student Central</a></li>
+            </ul>
+            <ul>
+               <li>Copyright &copy; 2018 University of Wollongong. CRICOS Provider No: 00102E</li>
+               <li><a href="http://www.uow.edu.au/about/privacy/"  target="_blank">Privacy</a></li>
+               <li><a href="http://www.uow.edu.au/about/disclaimer/"  target="_blank">Disclaimer</a></li>
+            </ul>
+         </div>
+      </div>
+      <script>
+         function createUUID(){
+                var s = [];
+                var hexDigits = "0123456789abcdef";
+         
+                for (var i = 0; i < 36; i++) {
+                     s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+                }
+                s[14] = "4";  // bits 12-15 of the time_hi_and_version field to 0010
+                s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1);  // bits 6-7 of the clock_seq_hi_and_reserved to 01
+                s[8] = s[13] = s[18] = s[23] = "-";
+         
+                var uuid = s.join("");
+                return uuid;
+         }
+         
+         $(document).ready(function(){
+              //{{UOWREF#21672
+              window.onpageshow = function(){
+                   $('.disabled_on_click').button('reset').attr("disabled", false);
+              };
+         
+              $(".disabled_on_click:disabled").removeClass("disabled_on_click");
+         
+         //{{UOWREF#21704
+         /*$('.modal').on('show.bs.modal', function () {
+            $('.modal-dialog', this).addClass('focused');
+            $('body').addClass('modalprinter');
+         }).on('hidden.bs.modal', function () {
+            $('.modal-dialog', this).removeClass('focused');
+            $('body').removeClass('modalprinter');
+         });*/
+         //UOWREF#21704}}
+         
+         
+         
+              //UOWREF#21672}}
+         
+              if(window.name == ""){
+                   window.name = createUUID();
+              }
+              else{
+                   my_menu_item = $.cookie("menu_item_" + window.name);
+              }
+         
+              nav = $("#sidebar-left");
+         
+              if(nav != null)
+              {
+                   if(document.referrer == ""){
+                        my_menu_item = null;
+                   }
+         
+                   if(my_menu_item == null){
+                        current_menu = $(".category").eq(3);
+                        $(current_menu).parent().toggleClass("open");
+                        $(current_menu).children("span").toggleClass("fa-angle-right").toggleClass("fa-angle-down");
+                   }
+                   else{
+                        $(".menu-item[data-id=" + my_menu_item + "]").parent().parent().toggleClass("open")
+                                                                     .children(".category").children("span")
+                                                                     .toggleClass("fa-angle-right")
+                                                                     .toggleClass("fa-angle-down");
+                        $(".menu-item[data-id=" + my_menu_item + "]").children("a").toggleClass("current");
+                   }
+         
+                   nav.on("mousedown", ".menu-item", function(e){
+                        //left-click
+                        if(e.which == 1){
+                             //new tab
+                             if(e.ctrlKey){
+                                  $.cookie("menu_item", $(this).data("id"));
+                             }
+                             //new window
+                             else if(e.shiftKey){
+                                  $.cookie("menu_item", $(this).data("id"))
+                             }
+                             else{
+                                  if($(this).hasClass("menu-popup")){
+                                       win = window.open($(this).find("a").attr("href"), "_blank"/*, "toolbar=no, menubar=no, resizable=yes, scrollbars=yes"*/); //UOWREF#21872
+                                       win.focus();
+                                       //return false;  --fixing the firefox popup window going to background.
+                                  }
+                                  else{
+                                       $.cookie("menu_item_" + window.name, $(this).data("id"));
+                                  }
+                             }
+                        }
+                        else{
+                             $.cookie("menu_item", $(this).data("id"));
+                        }
+                   })
+              }
+         
+              $("#mobile-menu-button").click(function(e){
+                   $("body, .footer").toggleClass("mobile-menu-open");
+                   $("#mobile-menu-button span.fa").toggle();
+                   $("#mobile-menu").scrollTop(0);
+              });
+              $(".m-arrow").click(function(){
+                   $(this).parent().toggleClass("active");
+                   $("#mobile-menu").scrollTop(0).children().toggleClass("level-1");
+              });
+         
+              $(".back").click(function(){
+                   $(this).parent().parent().parent().parent().toggleClass("active").parent().toggleClass("level-1");
+              });
+         
+              category_num = $(".category").children("span").length;
+         
+              $(".category").on("click", function(){
+                   $(this).parent().toggleClass("open");
+                   $(this).children("span").toggleClass("fa-angle-right").toggleClass("fa-angle-down");
+                   num_expand = $(".category").children("span.fa-angle-down").length;
+                   if(num_expand == 0){
+                        $("#expand-all").show();
+                        $("#collapse-all").hide();
+                   }
+                   else if(num_expand == category_num){
+                        $("#collapse-all").show();
+                        $("#expand-all").hide();
+                   }
+              });
+         
+              $(".table-show").on("click", function(e){
+                   e.preventDefault();
+                   $(this).toggle()
+                          .next().toggleClass("hidden-xs hidden-sm")
+                          .parent().parent().find(".hide-cell").toggleClass("hidden-xs hidden-sm");
+              });
+         
+              $(".table-hide").on("click", function(e){
+                   e.preventDefault();
+                   $(this).toggleClass("hidden-xs hidden-sm")
+                          .prev().toggle()
+                          .parent().parent().find(".hide-cell").toggleClass("hidden-xs hidden-sm");
+              });
+         
+              $("body").on("swiperight", function(){
+                   $("body, .footer").addClass("mobile-menu-open");
+                   $("#mobile-menu-button span.fa-bars").hide();
+                   $("#mobile-menu-button span.fa-close").show();
+              });
+         
+              $("body").on("swipeleft", function(){
+                   $("body, .footer").removeClass("mobile-menu-open");
+                   $("#mobile-menu-button span.fa-bars").show();
+                   $("#mobile-menu-button span.fa-close").hide();
+              })
+         
+              //back to top
+              var offset = 220;
+              var duration = 500;
+              $(window).scroll(function(){
+                   if($(this).scrollTop() > offset){
+                        $(".back-to-top").fadeIn(duration);
+                   }
+                   else{
+                        $(".back-to-top").fadeOut(duration);
+                   }
+              });
+         
+              $(".back-to-top").click(function(e){
+                   e.preventDefault();
+                   $("html, BODY").animate({scrollTop: 0}, 0);
+                   return false;
+              });
+         
+              $("#expand-all").click(function(){
+                   $("#expand-all, #collapse-all").toggle();
+                   $(".category").parent().addClass("open");
+                   $(".category").children("span").removeClass("fa-angle-right").addClass("fa-angle-down");
+              });
+         
+              $("#collapse-all").click(function(){
+                   $("#expand-all, #collapse-all").toggle();
+                   $(".category").parent().removeClass("open");
+                   $(".category").children("span").addClass("fa-angle-right").removeClass("fa-angle-down");
+              });
+         
+              var checkeventcount = 1,prevTarget;
+              $('.modal').on('show.bs.modal', function (e) {
+            if(typeof prevTarget == 'undefined' || (checkeventcount==1 && e.target!=prevTarget))
+            {
+              prevTarget = e.target;
+              checkeventcount++;
+              e.preventDefault();
+              $(e.target).appendTo('body').modal('show');
+            }
+            else if(e.target==prevTarget && checkeventcount==2)
+            {
+              checkeventcount--;
+            }
+         });
+         });
+      </script>
+      <script language="javascript">
+         var asciiF5 = 116;
+         var asciiF6 = 117;
+         
+          document.onkeydown = function (e) {
+          if (e.keyCode == asciiF5 || e.keyCode == asciiF6) {
+            return false;
+          }
+         };
+      </script> 
+      <script>
+         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','//www.uow.edu.au/server/analytics.js','ga');
+         
+         ga('create', 'UA-29367849-1', 'uow.edu.au');
+         ga('send', 'pageview');
+      </script>
+   </body>
+</html>
