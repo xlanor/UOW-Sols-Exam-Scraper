@@ -9,7 +9,8 @@ SOLS_LOGIN = 'https://solss.uow.edu.au/sid/sols_login_auth.do_login'
 CHROMEDRIVER_LOC = './chromedriver'
 CHROME_OPTIONS = Options()
 CHROME_OPTIONS.add_argument("--headless")
-CHROME_OPTIONS.add_argument("--window-size=1920x1080")
+CHROME_OPTIONS.add_argument("--disable-dev-shm-usage")
+CHROME_OPTIONS.add_argument("--no-sandbox")
 
 # To be removed
 
