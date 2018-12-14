@@ -31,9 +31,9 @@ class TGMessage():
             for rm in self.__resultModels:
                 if rm.subjectCode.strip().lower() == subCode.strip().lower():
                     if rm.mark:
-                        returnList.append(f"{rm.subjectCode} found: {rm.mark}/{rm.grade}")
+                        returnList.append(f"{rm.subjectCode} found: {rm.mark}/{rm.grade}\n")
                     else:
-                        returnList.append(f"{rm.subjectCode} unreleased.")
+                        returnList.append(f"{rm.subjectCode} unreleased.\n")
         return returnList
     
     def __getDict(self)->List[dict]:
@@ -43,6 +43,7 @@ class TGMessage():
         returnMsg = f"<b>Result Scraped at {self.__getDate()}</b>\n\n"
         # Do not Use multiline because fucking tg will take it
         resultString = self.__isValid()
+        resultString = "".join(resultString)
         returnMsg = f"{returnMsg} {resultString}"
         return {
             "chat_id":self.__channel,
