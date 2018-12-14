@@ -9,9 +9,10 @@ from Models.result_model import ResultModel
 import arrow
 
 class TGMessage():
-    def __init__(self, botCh: str, rm:List[ResultModel]):
+    def __init__(self, botCh: str, rm:List[ResultModel],subsToFind:List[str]):
         self.__channel = botCh
         self.__resultModels = rm
+        self.__subjectToFind = subsToFind
 
     @property
     def resultModels(self)->List[ResultModel]:
@@ -24,9 +25,16 @@ class TGMessage():
     def __getDate(self)->str:
         return arrow.utcnow().to('Asia/Singapore').format('DD/MM/YYYY HH:mm:ss')
     
-    def __isValid(self)->bool:
-        markResults = [x.mark if x.mark else None for x in self.__resultModels ]
-        return False if None in markResults else True
+    def __isValid(self)->List[str]:
+        returnList = []
+        for subCode in self.__subjectToFind:
+            for rm in self.__resultModels:
+                if rm.subjectCode.strip().lower() == subCode.strip().lower():
+                    if rm.mark:
+                        returnList.append(f"{rm.subjectCode} found: {rm.mark}/{rm.grade}")
+                    else:
+                        returnList.append(f"{rm.subjectCode} unreleased.")
+        return returnList
     
     def __getDict(self)->List[dict]:
         return [x.toDict() for x in self.__resultModels]
@@ -34,12 +42,8 @@ class TGMessage():
     def messageJson(self)->dict:
         returnMsg = f"<b>Result Scraped at {self.__getDate()}</b>\n\n"
         # Do not Use multiline because fucking tg will take it
-        isValid = self.__isValid()
-        if not isValid:
-            returnMsg = f"{returnMsg}Results have not been released!"
-        else:
-            # cast all to dict.
-            returnMsg = f"{returnMsg}Results have been released!"
+        resultString = self.__isValid()
+        returnMsg = f"{returnMsg} {resultString}"
         return {
             "chat_id":self.__channel,
             "text":returnMsg,

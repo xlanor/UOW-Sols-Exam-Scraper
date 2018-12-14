@@ -24,6 +24,7 @@ BOT_TOKEN = configDict.get("token")
 CHANNEL_CHAT_ID = configDict.get("channelID")
 CLIENT_USERNAME = configDict.get("clientUsn")
 CLIENT_PW = configDict.get("clientPw")
+LIST_OF_SUBJECTS = configDict.get("modulesToFind")
 
 TELEGRAM_URL = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
@@ -40,7 +41,7 @@ def send_requests(msg: dict):
 def job():
     print("Running job")
     result_list = find_tables()
-    msgJs = TGMessage(CHANNEL_CHAT_ID,result_list).messageJson()
+    msgJs = TGMessage(CHANNEL_CHAT_ID,result_list,LIST_OF_SUBJECTS).messageJson()
     send_requests(msgJs)
 
 if __name__ == "__main__":
