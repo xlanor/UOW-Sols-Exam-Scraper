@@ -27,8 +27,9 @@ To contribute, open a PR.
 
 **ANY PRs THAT DO NOT CONFORM TO BLACK WILL FAIL THE CI BUILD**
 
+<hr>
 
-#### Setup
+### Setup
 
 **NOT SUPPORTED FOR WINDOWS**
 
