@@ -17,7 +17,7 @@ from Models.result_model import ResultModel
 from Models.telegram_message import TGMessage
 
 print(os.getcwd())
-with open ('./config.json') as f:
+with open("./config.json") as f:
     configDict = json.loads(f.read())
 
 BOT_TOKEN = configDict.get("token")
@@ -29,23 +29,26 @@ LIST_OF_SUBJECTS = configDict.get("modulesToFind")
 TELEGRAM_URL = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
 
-def find_tables()->List[ResultModel]:
-    HtmlObj = Scraper.login(CLIENT_USERNAME,CLIENT_PW)
+def find_tables() -> List[ResultModel]:
+    HtmlObj = Scraper.login(CLIENT_USERNAME, CLIENT_PW)
     HtmlObj.find_tables()
     return HtmlObj.rmObjects
-    #markResults = [x.mark if x.mark else None for x in list_obj ]
+    # markResults = [x.mark if x.mark else None for x in list_obj ]
+
 
 def send_requests(msg: dict):
-    requests.post(TELEGRAM_URL,json=msg)
+    requests.post(TELEGRAM_URL, json=msg)
+
 
 def job():
     print("Running job")
     result_list = find_tables()
-    msgJs = TGMessage(CHANNEL_CHAT_ID,result_list,LIST_OF_SUBJECTS).messageJson()
+    msgJs = TGMessage(CHANNEL_CHAT_ID, result_list, LIST_OF_SUBJECTS).messageJson()
     send_requests(msgJs)
 
+
 if __name__ == "__main__":
-    schedule.every(1).minutes.do(job)
+    schedule.every(10).minutes.do(job)
 
     while True:
         try:
