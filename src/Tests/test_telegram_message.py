@@ -24,15 +24,15 @@ def test_telegram_message_model():
     notExistHtml.find_tables()
     notTableExist = notExistHtml.rmObjects
 
-    tgMsgExist = TGMessage("S1234567", tableExist, [ "CSCI235", "CSCI204" ])
+    tgMsgExist = TGMessage("S1234567", tableExist, ["CSCI235", "CSCI204"])
     existMessage = tgMsgExist.messageJson()
-    tgMsgNotExist = TGMessage("S1234567", notTableExist, [ "CSCI235", "CSCI204" ])
+    tgMsgNotExist = TGMessage("S1234567", notTableExist, ["CSCI235", "CSCI204"])
     notExistMessage = tgMsgNotExist.messageJson()
     r1 = "CSCI204 found: 31/C"
     r2 = "CSCI235 found: 31/C"
     r3 = "CSCI204 unreleased."
     r4 = "CSCI235 unreleased."
-    
+
     # TODO FIX THE ASSERTIONS HERE
     assert r1 in existMessage.get("text")
     assert r2 in existMessage.get("text")
