@@ -1,6 +1,7 @@
 <h1 align="center">UOW-Sols Exam Result Scraper </h1>
 
-[![License: MIT License](https://img.shields.io/dub/l/vibe-d.svg)](LICENSE) [![pythonver](https://img.shields.io/badge/python-3.6%2B-ff69b4.svg)](https://www.python.org/) [![Build Status](https://travis-ci.com/xlanor/UOW-Sols-Exam-Scraper.svg?branch=master)](https://travis-ci.com/xlanor/UOW-Sols-Exam-Scraper) [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![License: MIT License](https://img.shields.io/dub/l/vibe-d.svg)](LICENSE) [![pythonver](https://img.shields.io/badge/python-3.6%2B-ff69b4.svg)](https://www.python.org/) [![Build Status](https://travis-ci.com/xlanor/UOW-Sols-Exam-Scraper.svg?branch=master)](https://travis-ci.com/xlanor/UOW-Sols-Exam-Scraper) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+ [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 <hr>
 
