@@ -23,15 +23,25 @@ def test_telegram_message_model():
     notExistHtml = HtmlChecker(nexString)
     notExistHtml.find_tables()
     notTableExist = notExistHtml.rmObjects
-    tgMsgExist = TGMessage("S1234567", tableExist, [])
+
+    tgMsgExist = TGMessage("S1234567", tableExist, [ "CSCI235", "CSCI204" ])
     existMessage = tgMsgExist.messageJson()
-    tgMsgNotExist = TGMessage("S1234567", notTableExist, [])
+    tgMsgNotExist = TGMessage("S1234567", notTableExist, [ "CSCI235", "CSCI204" ])
     notExistMessage = tgMsgNotExist.messageJson()
-    r1 = "Results have not been released!"
-    r2 = "Results have been released!"
+    r1 = "CSCI204 found: 31/C"
+    r2 = "CSCI235 found: 31/C"
+    r3 = "CSCI204 unreleased."
+    r4 = "CSCI235 unreleased."
+    
     # TODO FIX THE ASSERTIONS HERE
-    # assert r2 in existMessage.get("text")
-    # assert r1 not in existMessage.get("text")
+    assert r1 in existMessage.get("text")
+    assert r2 in existMessage.get("text")
+    assert r3 not in existMessage.get("text")
+    assert r4 not in existMessage.get("text")
+    assert r1 not in notExistMessage.get("text")
+    assert r2 not in notExistMessage.get("text")
+    assert r3 in notExistMessage.get("text")
+    assert r4 in notExistMessage.get("text")
     ## assert r2 not in notExistMessage.get("text")
     # assert r1 in notExistMessage.get("text")
     # assert notExistMessage.get("chat_id") == "S1234567"

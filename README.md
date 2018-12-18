@@ -12,6 +12,8 @@ This is a rudimentary telegram bot that directly accesses the telegram API direc
 
 It will first scrape the relevant information from SOLS using headless chrome, and trigger a message to the telegram user through the telegram API.
 
+The modules to be targeted must be set.
+
 <hr>
 
 #### Setup
@@ -28,7 +30,10 @@ Fill in the relevant details accordingly. If you need help with using telegram b
 >	       "token": "telegram_bot_token_here",
 >	       "channelID":"channel_id_or_group_id",
 >	       "clientUsn": "sols_user_name",
->	       "clientPw": "sols_password"
+>	       "clientPw": "sols_password",
+>           "modulesToFind":[
+>                   "CSCI204","CSCI235"
+>               ]
 >     }
 
 Google Chrome is used as the preferred browser for selenium. Install using apt-get/ .exe/.msi/.app file directly, whatever.
