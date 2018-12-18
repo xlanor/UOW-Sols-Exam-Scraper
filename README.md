@@ -16,6 +16,18 @@ The modules to be targeted must be set.
 
 <hr>
 
+### Contribution
+
+This project uses 
+
+- [Poetry](https://github.com/sdispater/poetry/) for dependency management
+- [Black](https://github.com/ambv/black) for linting.
+
+To contribute, open a PR.
+
+**ANY PRs THAT DO NOT CONFORM TO BLACK WILL FAIL THE CI BUILD**
+
+
 #### Setup
 
 **NOT SUPPORTED FOR WINDOWS**
