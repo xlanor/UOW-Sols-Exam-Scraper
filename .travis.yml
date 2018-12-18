@@ -7,7 +7,11 @@ python:
 before_install:
     - curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
     - source $HOME/.poetry/env
-script:
+
+install:
     - poetry install
+
+script:
     - pytest -v
     - black --check --verbose src/
+
