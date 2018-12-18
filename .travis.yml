@@ -10,3 +10,4 @@ before_install:
 script:
     - poetry install
     - pytest -v
+    - black --check --verbose src/
