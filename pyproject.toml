@@ -28,6 +28,7 @@ arrow = { version = "^0.12.1" }
 requests = { version = "^2.19.1" }
 schedule = "^0.5.0"
 pre-commit = "^1.12"
+python-dotenv = "^0.10.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.8.0"

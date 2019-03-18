@@ -22,21 +22,26 @@ def login(user_usn: str, user_pw: str) -> HtmlChecker:
 
     user = driver.find_element_by_name("p_username")
     pw = driver.find_element_by_name("p_password")
-    loginBtn = driver.find_element_by_xpath("//input[@value='Login']")
+    login_btn = driver.find_element_by_xpath("//input[@value='Login']")
     user.send_keys(user_usn)
     pw.send_keys(user_pw)
-    loginBtn.click()
+    login_btn.click()
     time.sleep(10)
     return navigateLogin(driver)
 
 
 def navigateLogin(driver: webdriver) -> HtmlChecker:
-    driver.save_screenshot("Post_Login.png")
-    resultBtn = driver.find_element_by_xpath("//a[@data-id='21']")
-    resultBtn.click()
+    # driver.save_screenshot("Post_Login.png")
+    result_btn = driver.find_element_by_xpath("//a[@data-id='21']")
+    result_btn.click()
     time.sleep(10)
-    driver.save_screenshot("Results.png")
-    pageSource = driver.page_source
-    HtmlObj = HtmlChecker(pageSource)
+    # driver.save_screenshot("Results.png")
+    exam_result_page_source = driver.page_source
+    exam_result_html = HtmlChecker(exam_result_page_source)
+
+    home_page_btn = driver.find_element_by_id("uow-logo")
+    home_page_btn.click()
+    time.sleep(10)
+
     driver.quit()
-    return HtmlObj
+    return exam_result_html
