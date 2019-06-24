@@ -33,7 +33,7 @@ class TGMessage:
                 if rm.subjectCode.strip().lower() == subCode.strip().lower():
                     if rm.mark:
                         returnList.append(
-                            f"{rm.subjectCode} found: {rm.mark}/{rm.grade}\n"
+                            f"{rm.subjectCode} found: {rm.mark}/{rm.grade}\n @Fatalityx"
                         )
                     else:
                         returnList.append(f"{rm.subjectCode} unreleased.\n")
