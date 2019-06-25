@@ -14,7 +14,8 @@ class TGMessage:
         self.__channel = botCh
         self.__resultModels = rm
         self.__subjectToFind = subsToFind
-
+        self.__final_count = 0
+        self.__found_count = 0
     @property
     def resultModels(self) -> List[ResultModel]:
         return self.__resultModels
@@ -31,7 +32,9 @@ class TGMessage:
         for subCode in self.__subjectToFind:
             for rm in self.__resultModels:
                 if rm.subjectCode.strip().lower() == subCode.strip().lower():
+                    self.__final_count += 1
                     if rm.mark:
+                        self.__found_count += 1
                         returnList.append(
                             f"{rm.subjectCode} found: {rm.mark}/{rm.grade}\n @Fatalityx"
                         )
@@ -43,9 +46,9 @@ class TGMessage:
         return [x.toDict() for x in self.__resultModels]
 
     def messageJson(self) -> dict:
-        returnMsg = f"<b>Result Scraped at {self.__getDate()}</b>\n\n"
         # Do not Use multiline because fucking tg will take it
         resultString = self.__isValid()
+        returnMsg = f"<b>[{self.__found_count}/{self.__final_count}] Result Scraped at {self.__getDate()}</b>\n"
         resultString = "".join(resultString)
         returnMsg = f"{returnMsg} {resultString}"
         return {
